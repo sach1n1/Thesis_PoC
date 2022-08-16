@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/home/sachin/Thesis/kfold.py", line 21, in <module>
+    energy = load_data('./data')[['vibration']]
+  File "/home/sachin/Thesis/common/utils.py", line 32, in load_data
+    , parse_dates=['timestamp'])
+  File "/home/sachin/.local/lib/python3.6/site-packages/pandas/io/parsers.py", line 688, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/sachin/.local/lib/python3.6/site-packages/pandas/io/parsers.py", line 460, in _read
+    data = parser.read(nrows)
+  File "/home/sachin/.local/lib/python3.6/site-packages/pandas/io/parsers.py", line 1198, in read
+    ret = self._engine.read(nrows)
+  File "/home/sachin/.local/lib/python3.6/site-packages/pandas/io/parsers.py", line 2157, in read
+    data = self._reader.read(nrows)
+  File "pandas/_libs/parsers.pyx", line 847, in pandas._libs.parsers.TextReader.read
+  File "pandas/_libs/parsers.pyx", line 862, in pandas._libs.parsers.TextReader._read_low_memory
+  File "pandas/_libs/parsers.pyx", line 941, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 1073, in pandas._libs.parsers.TextReader._convert_column_data
+  File "pandas/_libs/parsers.pyx", line 1119, in pandas._libs.parsers.TextReader._convert_tokens
+  File "pandas/_libs/parsers.pyx", line 1162, in pandas._libs.parsers.TextReader._convert_with_dtype
+  File "/home/sachin/.local/lib/python3.6/site-packages/pandas/core/dtypes/common.py", line 530, in is_categorical_dtype
+    def is_categorical_dtype(arr_or_dtype) -> bool:
+KeyboardInterrupt

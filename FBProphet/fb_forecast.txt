@@ -1,0 +1,121 @@
+Train Start: 2021-05-27 00:00:00
+Test Start: 2021-05-27 12:00:00
+Test End: 2021-05-27 13:00:00MAPE: 28.21%
+RMSE: 17.4%
+12:00:000.26 minutes   Train Start: 2021-05-27 12:00:00
+Test Start: 2021-05-28 00:00:00
+Test End: 2021-05-28 01:00:00MAPE: 88.27%
+RMSE: 79.54%
+12:00:000.13 minutes   Train Start: 2021-05-28 00:00:00
+Test Start: 2021-05-28 12:00:00
+Test End: 2021-05-28 13:00:00MAPE: 29.56%
+RMSE: 29.99%
+12:00:000.21 minutes   Train Start: 2021-05-28 12:00:00
+Test Start: 2021-05-29 00:00:00
+Test End: 2021-05-29 01:00:00MAPE: 33.16%
+RMSE: 42.53%
+12:00:000.21 minutes   Train Start: 2021-05-29 00:00:00
+Test Start: 2021-05-29 12:00:00
+Test End: 2021-05-29 13:00:00MAPE: 32.67%
+RMSE: 35.45%
+12:00:000.25 minutes   Train Start: 2021-05-29 12:00:00
+Test Start: 2021-05-30 00:00:00
+Test End: 2021-05-30 01:00:00MAPE: 15.13%
+RMSE: 32.01%
+12:00:000.17 minutes   Train Start: 2021-05-30 00:00:00
+Test Start: 2021-05-30 12:00:00
+Test End: 2021-05-30 13:00:00MAPE: 16.09%
+RMSE: 17.8%
+12:00:000.14 minutes   Train Start: 2021-05-30 12:00:00
+Test Start: 2021-05-31 00:00:00
+Test End: 2021-05-31 01:00:00MAPE: 35.64%
+RMSE: 48.66%
+12:00:000.27 minutes   Train Start: 2021-05-31 00:00:00
+Test Start: 2021-05-31 12:00:00
+Test End: 2021-05-31 13:00:00MAPE: 27.13%
+RMSE: 34.38%
+12:00:000.25 minutes   Train Start: 2021-05-31 12:00:00
+Test Start: 2021-06-01 00:00:00
+Test End: 2021-06-01 01:00:00MAPE: 44.17%
+RMSE: 42.49%
+12:00:000.27 minutes   Train Start: 2021-06-01 00:00:00
+Test Start: 2021-06-01 12:00:00
+Test End: 2021-06-01 13:00:00MAPE: 171.6%
+RMSE: 147.97%
+12:00:000.36 minutes   Train Start: 2021-06-01 12:00:00
+Test Start: 2021-06-02 00:00:00
+Test End: 2021-06-02 01:00:00MAPE: 58.4%
+RMSE: 60.45%
+12:00:000.2 minutes   Train Start: 2021-06-02 00:00:00
+Test Start: 2021-06-02 12:00:00
+Test End: 2021-06-02 13:00:00MAPE: 34.43%
+RMSE: 66.15%
+12:00:000.34 minutes   Train Start: 2021-06-02 12:00:00
+Test Start: 2021-06-03 00:00:00
+Test End: 2021-06-03 01:00:00MAPE: 27.12%
+RMSE: 52.32%
+12:00:000.29 minutes   Train Start: 2021-06-03 00:00:00
+Test Start: 2021-06-03 12:00:00
+Test End: 2021-06-03 13:00:00MAPE: 22.66%
+RMSE: 27.76%
+12:00:000.13 minutes   Train Start: 2021-06-03 12:00:00
+Test Start: 2021-06-04 00:00:00
+Test End: 2021-06-04 01:00:00MAPE: 31.05%
+RMSE: 44.69%
+12:00:000.23 minutes   Train Start: 2021-06-04 00:00:00
+Test Start: 2021-06-04 12:00:00
+Test End: 2021-06-04 13:00:00MAPE: 21.47%
+RMSE: 35.69%
+12:00:000.16 minutes   Train Start: 2021-06-04 12:00:00
+Test Start: 2021-06-05 00:00:00
+Test End: 2021-06-05 01:00:00MAPE: 34.89%
+RMSE: 61.99%
+12:00:000.24 minutes   Train Start: 2021-06-05 00:00:00
+Test Start: 2021-06-05 12:00:00
+Test End: 2021-06-05 13:00:00MAPE: 34.04%
+RMSE: 38.55%
+12:00:000.21 minutes   Train Start: 2021-06-05 12:00:00
+Test Start: 2021-06-06 00:00:00
+Test End: 2021-06-06 01:00:00MAPE: 25.6%
+RMSE: 42.08%
+12:00:000.15 minutes   Train Start: 2021-06-06 00:00:00
+Test Start: 2021-06-06 12:00:00
+Test End: 2021-06-06 13:00:00MAPE: 22.87%
+RMSE: 44.13%
+12:00:000.19 minutes   Train Start: 2021-06-06 12:00:00
+Test Start: 2021-06-07 00:00:00
+Test End: 2021-06-07 01:00:00MAPE: 18.57%
+RMSE: 22.37%
+12:00:000.18 minutes   Train Start: 2021-06-07 00:00:00
+Test Start: 2021-06-07 12:00:00
+Test End: 2021-06-07 13:00:00MAPE: 21.68%
+RMSE: 27.47%
+12:00:000.2 minutes   Train Start: 2021-06-07 12:00:00
+Test Start: 2021-06-08 00:00:00
+Test End: 2021-06-08 01:00:00MAPE: 25.17%
+RMSE: 21.18%
+12:00:000.14 minutes   Train Start: 2021-06-08 00:00:00
+Test Start: 2021-06-08 12:00:00
+Test End: 2021-06-08 13:00:00MAPE: 19.71%
+RMSE: 18.63%
+12:00:000.13 minutes   Train Start: 2021-06-08 12:00:00
+Test Start: 2021-06-09 00:00:00
+Test End: 2021-06-09 01:00:00MAPE: 32.77%
+RMSE: 42.87%
+12:00:000.12 minutes   Train Start: 2021-06-09 00:00:00
+Test Start: 2021-06-09 12:00:00
+Test End: 2021-06-09 13:00:00MAPE: 15.2%
+RMSE: 15.19%
+12:00:000.18 minutes   Train Start: 2021-06-09 12:00:00
+Test Start: 2021-06-10 00:00:00
+Test End: 2021-06-10 01:00:00MAPE: 15.29%
+RMSE: 14.82%
+12:00:000.26 minutes   Train Start: 2021-06-10 00:00:00
+Test Start: 2021-06-10 12:00:00
+Test End: 2021-06-10 13:00:00MAPE: 19.58%
+RMSE: 16.7%
+12:00:000.13 minutes   Train Start: 2021-06-10 12:00:00
+Test Start: 2021-06-11 00:00:00
+Test End: 2021-06-11 01:00:00MAPE: 55.77%
+RMSE: 39.24%
+12:00:000.25 minutes   

@@ -1,0 +1,452 @@
+changepoint_prior_scale: 0.009
+seasonality_prior_scale: 0.5
+changepoint_prior_scale: 0.009
+seasonality_prior_scale: 0.5
+MAPE for training data: 27.0%
+RMSE for training data: 29.72%
+
+changepoint_prior_scale: 0.009
+seasonality_prior_scale: 0.51
+MAPE for training data: 27.0%
+RMSE for training data: 29.72%
+
+changepoint_prior_scale: 0.009
+seasonality_prior_scale: 0.52
+MAPE for training data: 27.0%
+RMSE for training data: 29.72%
+
+changepoint_prior_scale: 0.009
+seasonality_prior_scale: 0.53
+MAPE for training data: 27.0%
+RMSE for training data: 29.72%
+
+changepoint_prior_scale: 0.009
+seasonality_prior_scale: 0.54
+MAPE for training data: 27.0%
+RMSE for training data: 29.72%
+
+changepoint_prior_scale: 0.009
+seasonality_prior_scale: 0.55
+MAPE for training data: 27.0%
+RMSE for training data: 29.72%
+
+changepoint_prior_scale: 0.009
+seasonality_prior_scale: 0.56
+MAPE for training data: 27.0%
+RMSE for training data: 29.72%
+
+changepoint_prior_scale: 0.009
+seasonality_prior_scale: 0.5700000000000001
+MAPE for training data: 27.0%
+RMSE for training data: 29.72%
+
+changepoint_prior_scale: 0.009
+seasonality_prior_scale: 0.5800000000000001
+MAPE for training data: 27.0%
+RMSE for training data: 29.72%
+
+changepoint_prior_scale: 0.009099999999999999
+seasonality_prior_scale: 0.5
+MAPE for training data: 27.21%
+RMSE for training data: 29.75%
+
+changepoint_prior_scale: 0.009099999999999999
+seasonality_prior_scale: 0.51
+MAPE for training data: 27.21%
+RMSE for training data: 29.75%
+
+changepoint_prior_scale: 0.009099999999999999
+seasonality_prior_scale: 0.52
+MAPE for training data: 27.21%
+RMSE for training data: 29.75%
+
+changepoint_prior_scale: 0.009099999999999999
+seasonality_prior_scale: 0.53
+MAPE for training data: 27.21%
+RMSE for training data: 29.75%
+
+changepoint_prior_scale: 0.009099999999999999
+seasonality_prior_scale: 0.54
+MAPE for training data: 27.21%
+RMSE for training data: 29.75%
+
+changepoint_prior_scale: 0.009099999999999999
+seasonality_prior_scale: 0.55
+MAPE for training data: 27.21%
+RMSE for training data: 29.75%
+
+changepoint_prior_scale: 0.009099999999999999
+seasonality_prior_scale: 0.56
+MAPE for training data: 27.21%
+RMSE for training data: 29.75%
+
+changepoint_prior_scale: 0.009099999999999999
+seasonality_prior_scale: 0.5700000000000001
+MAPE for training data: 27.21%
+RMSE for training data: 29.75%
+
+changepoint_prior_scale: 0.009099999999999999
+seasonality_prior_scale: 0.5800000000000001
+MAPE for training data: 27.21%
+RMSE for training data: 29.75%
+
+changepoint_prior_scale: 0.009199999999999998
+seasonality_prior_scale: 0.5
+MAPE for training data: 27.06%
+RMSE for training data: 29.73%
+
+changepoint_prior_scale: 0.009199999999999998
+seasonality_prior_scale: 0.51
+MAPE for training data: 27.06%
+RMSE for training data: 29.73%
+
+changepoint_prior_scale: 0.009199999999999998
+seasonality_prior_scale: 0.52
+MAPE for training data: 27.06%
+RMSE for training data: 29.73%
+
+changepoint_prior_scale: 0.009199999999999998
+seasonality_prior_scale: 0.53
+MAPE for training data: 27.06%
+RMSE for training data: 29.73%
+
+changepoint_prior_scale: 0.009199999999999998
+seasonality_prior_scale: 0.54
+MAPE for training data: 27.06%
+RMSE for training data: 29.73%
+
+changepoint_prior_scale: 0.009199999999999998
+seasonality_prior_scale: 0.55
+MAPE for training data: 27.06%
+RMSE for training data: 29.73%
+
+changepoint_prior_scale: 0.009199999999999998
+seasonality_prior_scale: 0.56
+MAPE for training data: 27.06%
+RMSE for training data: 29.73%
+
+changepoint_prior_scale: 0.009199999999999998
+seasonality_prior_scale: 0.5700000000000001
+MAPE for training data: 27.06%
+RMSE for training data: 29.73%
+
+changepoint_prior_scale: 0.009199999999999998
+seasonality_prior_scale: 0.5800000000000001
+MAPE for training data: 27.06%
+RMSE for training data: 29.73%
+
+changepoint_prior_scale: 0.009299999999999998
+seasonality_prior_scale: 0.5
+MAPE for training data: 27.11%
+RMSE for training data: 29.73%
+
+changepoint_prior_scale: 0.009299999999999998
+seasonality_prior_scale: 0.51
+MAPE for training data: 27.11%
+RMSE for training data: 29.73%
+
+changepoint_prior_scale: 0.009299999999999998
+seasonality_prior_scale: 0.52
+MAPE for training data: 27.11%
+RMSE for training data: 29.73%
+
+changepoint_prior_scale: 0.009299999999999998
+seasonality_prior_scale: 0.53
+MAPE for training data: 27.11%
+RMSE for training data: 29.73%
+
+changepoint_prior_scale: 0.009299999999999998
+seasonality_prior_scale: 0.54
+MAPE for training data: 27.11%
+RMSE for training data: 29.73%
+
+changepoint_prior_scale: 0.009299999999999998
+seasonality_prior_scale: 0.55
+MAPE for training data: 27.11%
+RMSE for training data: 29.73%
+
+changepoint_prior_scale: 0.009299999999999998
+seasonality_prior_scale: 0.56
+MAPE for training data: 27.11%
+RMSE for training data: 29.73%
+
+changepoint_prior_scale: 0.009299999999999998
+seasonality_prior_scale: 0.5700000000000001
+MAPE for training data: 27.11%
+RMSE for training data: 29.73%
+
+changepoint_prior_scale: 0.009299999999999998
+seasonality_prior_scale: 0.5800000000000001
+MAPE for training data: 27.11%
+RMSE for training data: 29.73%
+
+changepoint_prior_scale: 0.009399999999999997
+seasonality_prior_scale: 0.5
+MAPE for training data: 27.07%
+RMSE for training data: 29.73%
+
+changepoint_prior_scale: 0.009399999999999997
+seasonality_prior_scale: 0.51
+MAPE for training data: 27.07%
+RMSE for training data: 29.73%
+
+changepoint_prior_scale: 0.009399999999999997
+seasonality_prior_scale: 0.52
+MAPE for training data: 27.07%
+RMSE for training data: 29.73%
+
+changepoint_prior_scale: 0.009399999999999997
+seasonality_prior_scale: 0.53
+MAPE for training data: 27.07%
+RMSE for training data: 29.73%
+
+changepoint_prior_scale: 0.009399999999999997
+seasonality_prior_scale: 0.54
+MAPE for training data: 27.07%
+RMSE for training data: 29.73%
+
+changepoint_prior_scale: 0.009399999999999997
+seasonality_prior_scale: 0.55
+MAPE for training data: 27.07%
+RMSE for training data: 29.73%
+
+changepoint_prior_scale: 0.009399999999999997
+seasonality_prior_scale: 0.56
+MAPE for training data: 27.07%
+RMSE for training data: 29.73%
+
+changepoint_prior_scale: 0.009399999999999997
+seasonality_prior_scale: 0.5700000000000001
+MAPE for training data: 27.07%
+RMSE for training data: 29.73%
+
+changepoint_prior_scale: 0.009399999999999997
+seasonality_prior_scale: 0.5800000000000001
+MAPE for training data: 27.07%
+RMSE for training data: 29.73%
+
+changepoint_prior_scale: 0.009499999999999996
+seasonality_prior_scale: 0.5
+MAPE for training data: 26.86%
+RMSE for training data: 29.71%
+
+changepoint_prior_scale: 0.009499999999999996
+seasonality_prior_scale: 0.51
+MAPE for training data: 26.86%
+RMSE for training data: 29.71%
+
+changepoint_prior_scale: 0.009499999999999996
+seasonality_prior_scale: 0.52
+MAPE for training data: 26.86%
+RMSE for training data: 29.71%
+
+changepoint_prior_scale: 0.009499999999999996
+seasonality_prior_scale: 0.53
+MAPE for training data: 26.86%
+RMSE for training data: 29.71%
+
+changepoint_prior_scale: 0.009499999999999996
+seasonality_prior_scale: 0.54
+MAPE for training data: 26.86%
+RMSE for training data: 29.71%
+
+changepoint_prior_scale: 0.009499999999999996
+seasonality_prior_scale: 0.55
+MAPE for training data: 26.86%
+RMSE for training data: 29.71%
+
+changepoint_prior_scale: 0.009499999999999996
+seasonality_prior_scale: 0.56
+MAPE for training data: 26.86%
+RMSE for training data: 29.71%
+
+changepoint_prior_scale: 0.009499999999999996
+seasonality_prior_scale: 0.5700000000000001
+MAPE for training data: 26.86%
+RMSE for training data: 29.71%
+
+changepoint_prior_scale: 0.009499999999999996
+seasonality_prior_scale: 0.5800000000000001
+MAPE for training data: 26.86%
+RMSE for training data: 29.71%
+
+changepoint_prior_scale: 0.009599999999999996
+seasonality_prior_scale: 0.5
+MAPE for training data: 27.16%
+RMSE for training data: 29.74%
+
+changepoint_prior_scale: 0.009599999999999996
+seasonality_prior_scale: 0.51
+MAPE for training data: 27.16%
+RMSE for training data: 29.74%
+
+changepoint_prior_scale: 0.009599999999999996
+seasonality_prior_scale: 0.52
+MAPE for training data: 27.16%
+RMSE for training data: 29.74%
+
+changepoint_prior_scale: 0.009599999999999996
+seasonality_prior_scale: 0.53
+MAPE for training data: 27.16%
+RMSE for training data: 29.74%
+
+changepoint_prior_scale: 0.009599999999999996
+seasonality_prior_scale: 0.54
+MAPE for training data: 27.16%
+RMSE for training data: 29.74%
+
+changepoint_prior_scale: 0.009599999999999996
+seasonality_prior_scale: 0.55
+MAPE for training data: 27.16%
+RMSE for training data: 29.74%
+
+changepoint_prior_scale: 0.009599999999999996
+seasonality_prior_scale: 0.56
+MAPE for training data: 27.16%
+RMSE for training data: 29.74%
+
+changepoint_prior_scale: 0.009599999999999996
+seasonality_prior_scale: 0.5700000000000001
+MAPE for training data: 27.16%
+RMSE for training data: 29.74%
+
+changepoint_prior_scale: 0.009599999999999996
+seasonality_prior_scale: 0.5800000000000001
+MAPE for training data: 27.16%
+RMSE for training data: 29.74%
+
+changepoint_prior_scale: 0.009699999999999995
+seasonality_prior_scale: 0.5
+MAPE for training data: 26.95%
+RMSE for training data: 29.72%
+
+changepoint_prior_scale: 0.009699999999999995
+seasonality_prior_scale: 0.51
+MAPE for training data: 26.95%
+RMSE for training data: 29.72%
+
+changepoint_prior_scale: 0.009699999999999995
+seasonality_prior_scale: 0.52
+MAPE for training data: 26.95%
+RMSE for training data: 29.72%
+
+changepoint_prior_scale: 0.009699999999999995
+seasonality_prior_scale: 0.53
+MAPE for training data: 26.95%
+RMSE for training data: 29.72%
+
+changepoint_prior_scale: 0.009699999999999995
+seasonality_prior_scale: 0.54
+MAPE for training data: 26.95%
+RMSE for training data: 29.72%
+
+changepoint_prior_scale: 0.009699999999999995
+seasonality_prior_scale: 0.55
+MAPE for training data: 26.95%
+RMSE for training data: 29.72%
+
+changepoint_prior_scale: 0.009699999999999995
+seasonality_prior_scale: 0.56
+MAPE for training data: 26.95%
+RMSE for training data: 29.72%
+
+changepoint_prior_scale: 0.009699999999999995
+seasonality_prior_scale: 0.5700000000000001
+MAPE for training data: 26.95%
+RMSE for training data: 29.72%
+
+changepoint_prior_scale: 0.009699999999999995
+seasonality_prior_scale: 0.5800000000000001
+MAPE for training data: 26.95%
+RMSE for training data: 29.72%
+
+changepoint_prior_scale: 0.009799999999999994
+seasonality_prior_scale: 0.5
+MAPE for training data: 26.98%
+RMSE for training data: 29.72%
+
+changepoint_prior_scale: 0.009799999999999994
+seasonality_prior_scale: 0.51
+MAPE for training data: 26.98%
+RMSE for training data: 29.72%
+
+changepoint_prior_scale: 0.009799999999999994
+seasonality_prior_scale: 0.52
+MAPE for training data: 26.98%
+RMSE for training data: 29.72%
+
+changepoint_prior_scale: 0.009799999999999994
+seasonality_prior_scale: 0.53
+MAPE for training data: 26.98%
+RMSE for training data: 29.72%
+
+changepoint_prior_scale: 0.009799999999999994
+seasonality_prior_scale: 0.54
+MAPE for training data: 26.98%
+RMSE for training data: 29.72%
+
+changepoint_prior_scale: 0.009799999999999994
+seasonality_prior_scale: 0.55
+MAPE for training data: 26.98%
+RMSE for training data: 29.72%
+
+changepoint_prior_scale: 0.009799999999999994
+seasonality_prior_scale: 0.56
+MAPE for training data: 26.98%
+RMSE for training data: 29.72%
+
+changepoint_prior_scale: 0.009799999999999994
+seasonality_prior_scale: 0.5700000000000001
+MAPE for training data: 26.98%
+RMSE for training data: 29.72%
+
+changepoint_prior_scale: 0.009799999999999994
+seasonality_prior_scale: 0.5800000000000001
+MAPE for training data: 26.98%
+RMSE for training data: 29.72%
+
+changepoint_prior_scale: 0.009899999999999994
+seasonality_prior_scale: 0.5
+MAPE for training data: 26.95%
+RMSE for training data: 29.72%
+
+changepoint_prior_scale: 0.009899999999999994
+seasonality_prior_scale: 0.51
+MAPE for training data: 26.95%
+RMSE for training data: 29.72%
+
+changepoint_prior_scale: 0.009899999999999994
+seasonality_prior_scale: 0.52
+MAPE for training data: 26.95%
+RMSE for training data: 29.72%
+
+changepoint_prior_scale: 0.009899999999999994
+seasonality_prior_scale: 0.53
+MAPE for training data: 26.95%
+RMSE for training data: 29.72%
+
+changepoint_prior_scale: 0.009899999999999994
+seasonality_prior_scale: 0.54
+MAPE for training data: 26.95%
+RMSE for training data: 29.72%
+
+changepoint_prior_scale: 0.009899999999999994
+seasonality_prior_scale: 0.55
+MAPE for training data: 26.95%
+RMSE for training data: 29.72%
+
+changepoint_prior_scale: 0.009899999999999994
+seasonality_prior_scale: 0.56
+MAPE for training data: 26.95%
+RMSE for training data: 29.72%
+
+changepoint_prior_scale: 0.009899999999999994
+seasonality_prior_scale: 0.5700000000000001
+MAPE for training data: 26.95%
+RMSE for training data: 29.72%
+
+changepoint_prior_scale: 0.009899999999999994
+seasonality_prior_scale: 0.5800000000000001
+MAPE for training data: 26.95%
+RMSE for training data: 29.72%
+
