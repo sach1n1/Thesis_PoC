@@ -9,32 +9,23 @@ from sklearn.metrics import mean_squared_error
 from SVR_opt.ProcessDB import  ProcessDB
 import matplotlib.pyplot as plt
 import sqlite3 as db
+import os
 from datetime import datetime
 
 warnings.simplefilter('ignore')
 
 
-database_path = "/home/sachin/Downloads/RWO_0004_Ventilatoren_00.sqlite"
 
-forecast_hour = '2021-05-27 12:00:00'
-training_duration = 6
+def load_data(data_dir):
+    energy = pd.read_csv(os.path.join(data_dir, 'accelerometer.csv'))
+    return energy
 
 
-database = "/home/sachin/Downloads/RWO_0004_Ventilatoren_00.sqlite"
+vibration_x = load_data('../data/')[['x']]
 
-con = db.connect(database)
-df = pd.read_sql_query(f"SELECT time, value FROM Value WHERE sensor_id=1 AND "
-                       f"time >= '{1619820000000}' AND time < '{1619848800000}'",
-                       con)
-df["time"] = df["time"].apply(lambda utc: datetime.fromtimestamp(int(utc / 1000)))
-df.drop_duplicates(subset="time", keep="first", inplace=True)
-df.index = df['time']
-df = df.reindex(pd.date_range(min(df.index),
-                              max(df.index),
-                              freq='S'))
-df.drop('time', axis=1, inplace=True)
-df = df.interpolate().fillna(method='bfill')
-con.close()
+
+df = vibration_x.iloc[:1000]
+
 plt.plot(df)
 plt.show()
 
@@ -51,7 +42,7 @@ from statsmodels.tsa.holtwinters import SimpleExpSmoothing
 
 ses = SimpleExpSmoothing(train)
 
-alpha = 0.0001
+alpha = 1
 model = ses.fit(smoothing_level=alpha, optimized = False)
 
 forcast = model.forecast(len(test))

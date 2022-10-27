@@ -23,10 +23,6 @@ warnings.simplefilter('ignore')
 energy = load_data('../data')[['vibration']]
 
 
-train_start_dt = '2021-06-25 12:00:00'
-test_start_dt = '2021-06-27 12:00:00'
-test_end_dt = '2021-06-27 13:00:00'
-
 train = energy.copy()[(energy.index >= train_start_dt) & (energy.index < test_start_dt)][['vibration']]
 test = energy.copy()[(energy.index >= test_start_dt) & (energy.index < test_end_dt)][['vibration']]
 train = train.reset_index().rename(columns={'index': 'ds', 'vibration': 'y'})

@@ -5,7 +5,7 @@ from sklearn.preprocessing import MinMaxScaler
 from common.utils import load_data, mape, rmse, compar
 
 
-vibration = load_data('/home/sachin/Thesis/data')[['vibration']]
+vibration = load_data('/data')[['vibration']]
 
 
 
