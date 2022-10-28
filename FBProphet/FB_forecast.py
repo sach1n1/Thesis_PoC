@@ -17,16 +17,12 @@ warnings.simplefilter('ignore')
 # pd.set_option('display.max_colwidth', -1)
 
 database_path = "/home/sachin/Downloads/RWO_0004_Ventilatoren_00.sqlite"
-
-
-
-
 database = "/home/sachin/Downloads/RWO_0004_Ventilatoren_00.sqlite"
 forecast_hour = '2021-05-27 12:00:00'
-training_duration = 24
+training_duration = 1
 con = db.connect(database)
 df = pd.read_sql_query(f"SELECT time, value FROM Value WHERE sensor_id=1 AND "
-                       f"time >= '{1622041200000}' AND time <= '{1622131200000}'",
+                       f"time >= '{1622106000000}' AND time <= '{1622113200000}'",
                        con)
 df["time"] = df["time"].apply(lambda utc: datetime.fromtimestamp(int(utc / 1000)))
 df.drop_duplicates(subset="time", keep="first", inplace=True)
@@ -46,8 +42,8 @@ train = train.reset_index().rename(columns={'index': 'ds', 'value': 'y'})
 test = test.reset_index().rename(columns={'index': 'ds', 'value': 'y'})
 print(test)
 
-m = Prophet(changepoint_prior_scale=0.001,
-            seasonality_prior_scale=0.1)
+m = Prophet(changepoint_prior_scale=1,
+            seasonality_prior_scale=1)
 
 m.fit(train)
 
@@ -63,10 +59,12 @@ pred = pd.DataFrame(index=test.index)
 pred["Predicted Values"] = forecast['yhat']
 pred["Test Values"] = test["y"]
 print(pred)
-pred.plot(title=f"Predictions based on {training_duration} hours of training data")
-# plt.show()
-# plt.savefig(f'Forecast with {training_duration} hours of training data.eps', format='eps', dpi=1200)
-
+pred.plot()
+plt.xlabel("Time (seconds)")
+plt.ylabel("Vibration Value")
+plt.show()
+plt.savefig(f'plots/Forecast with {training_duration} hours of training data_bcv.eps', format='eps', dpi=1200)
+plt.savefig(f'plots/Forecast with {training_duration} hours of training data_bcv.jpg', format='jpg', dpi=1200)
 
 # iteration_dict["Train Start "] = str(train_start_dt)
 # iteration_dict["Test Start "] = str(test_start_dt)

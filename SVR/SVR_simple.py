@@ -23,14 +23,21 @@ train_start_dt = '2021-05-27 06:00:00'
 test_start_dt = '2021-05-27 12:00:00'
 test_end_dt = '2021-05-27 13:00:00'
 
+ti = {
+24:1622023200000,
+12:1622066400000,
+6:1622088000000,
+1:1622106000000
+}
+
 scaler = MinMaxScaler()
 
 database = "/home/sachin/Downloads/RWO_0004_Ventilatoren_00.sqlite"
 forecast_hour = '2021-05-27 12:00:00'
-training_duration = 6
+training_duration = 1
 con = db.connect(database)
 df = pd.read_sql_query(f"SELECT time, value FROM Value WHERE sensor_id=1 AND "
-                       f"time >= '{1622106000000}' AND time <= '{1622131200000}'",
+                       f"time >= '{1622023200000}' AND time <= '{1622131201000}'",
                        con)
 df["time"] = df["time"].apply(lambda utc: datetime.fromtimestamp(int(utc / 1000)))
 df.drop_duplicates(subset="time", keep="first", inplace=True)
@@ -63,7 +70,9 @@ test_data_timesteps = np.array(
 x_train, y_train = train_data_timesteps[:, :timesteps - 1], train_data_timesteps[:, [timesteps - 1]]
 x_test, y_test = test_data_timesteps[:, :timesteps - 1], test_data_timesteps[:, [timesteps - 1]]
 
-model = SVR(kernel='rbf', gamma=1, C=10, epsilon=0.01)
+#model = SVR(kernel='rbf', gamma=1, C=10, epsilon=0.01)
+#model = SVR(kernel='rbf', gamma=1, C=10, epsilon=0.01)
+model = SVR(kernel='rbf', gamma=0.01, C=10, epsilon=0.001)
 
 model.fit(x_train, y_train[:, 0])
 

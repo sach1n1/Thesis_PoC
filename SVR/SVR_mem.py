@@ -21,7 +21,7 @@ start = time()
 
 vibration = load_data('/home/sachin/Thesis/data')[['vibration']]
 
-train_start_dt = '2021-05-27 11:00:00'
+train_start_dt = '2021-05-26 12:00:00'
 test_start_dt = '2021-05-27 12:00:00'
 test_end_dt = '2021-05-27 13:00:00'
 
@@ -55,7 +55,9 @@ for iterations in range(1, 31):
     x_train, y_train = train_data_timesteps[:, :timesteps - 1], train_data_timesteps[:, [timesteps - 1]]
     x_test, y_test = test_data_timesteps[:, :timesteps - 1], test_data_timesteps[:, [timesteps - 1]]
 
-    model = SVR(kernel='rbf', gamma=1, C=10, epsilon=0.01)
+    # model = SVR(kernel='rbf', gamma=0.5, C=10, epsilon=0.05)
+    # model = SVR(kernel='rbf', gamma=1, C=10, epsilon=0.01) #CV take slongerthesis
+    model = SVR(kernel='rbf', gamma=0.01, C=10, epsilon=0.001)
 
     model.fit(x_train, y_train[:, 0])
 
@@ -77,7 +79,7 @@ for iterations in range(1, 31):
     iteration_dict["Test Start "] = str(test_start_dt)
     iteration_dict["Test End"] = str(test_end_dt)
     iteration_dict["MAPE"] = round(mape(y_test_pred, y_test) * 100, 2)
-    iteration_dict["RMSE"] = round(rmse(y_test_pred, y_test) * 100, 2)
+    iteration_dict["RMSE"] = round(rmse(y_test_pred, y_test), 2)
     iteration_dict["Time Taken"] = round((time() - start) / 60, 2)
 
     result_dict[str(iterations)] = deepcopy(iteration_dict)
@@ -86,9 +88,13 @@ for iterations in range(1, 31):
     test_start_dt = str(pd.Timestamp(test_start_dt) + pd.DateOffset(hours=1))
     test_end_dt = str(pd.Timestamp(test_start_dt) + pd.DateOffset(hours=1))
 
-f = open("SVR/hour1.txt", 'wt')
+
+
+f = open("Outs/hour24CVp.txt", 'w')
 data = str(result_dict)
+print(data)
 f.write(data)
+f.close()
 
 # plt.figure(figsize=(25,6))
 # plt.plot(train_timestamps, y_train, color = 'red', linewidth=2.0, alpha = 0.6)

@@ -22,7 +22,7 @@ class ProcessDB:
         con = db.connect(self.database)
         start_dt_utc = datetime.timestamp(datetime.strptime(start_date, '%Y-%m-%d %H:%M:%S')) * 1000
         end_dt_utc = datetime.timestamp(datetime.strptime(end_date, '%Y-%m-%d %H:%M:%S')) * 1000
-        df = pd.read_sql_query(f"SELECT time, value FROM Value WHERE sensor_id=2 AND "
+        df = pd.read_sql_query(f"SELECT time, value FROM Value WHERE sensor_id=1 AND "
                                f"time >= '{int(start_dt_utc)}' AND time < '{int(end_dt_utc)}'",
                                con)
         df["time"] = df["time"].apply(lambda utc: datetime.fromtimestamp(int(utc / 1000)))
@@ -33,8 +33,7 @@ class ProcessDB:
                                       end_date,
                                       freq='S'))
         df.drop('time', axis=1, inplace=True)
-        df = df.diff()
         df = df.interpolate().fillna(method='bfill')
-        df.drop(df.tail(1).index, inplace=True)
+        # df.drop(df.tail(1).index, inplace=True)
         con.close()
         return df

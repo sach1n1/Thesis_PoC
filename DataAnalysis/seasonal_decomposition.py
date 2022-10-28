@@ -62,8 +62,6 @@ res = seasonal_decompose(df["value"], model='additive', period=1)
 fig, axes = plt.subplots(nrows=4, sharex=True)
 fig.suptitle('Decomposition of Vibration Values into components')
 plotseasonal(res)
-plotseasonal(res)
-plotseasonal(res)
 
 plt.tight_layout(pad=1.08, rect=[0, 0.03, 1, 0.95])
 

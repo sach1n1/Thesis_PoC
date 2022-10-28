@@ -14,10 +14,6 @@ def load_data(data_dir):
 
 vibration_x = load_data('../data/')[['x']]
 
-print(len(vibration_x))
-
-vibration_x[:5000].plot()
-
 vibration = vibration_x.iloc[:5000]
 
 test_len = int(len(vibration)*0.2)
@@ -31,8 +27,7 @@ test['x'] = scaler.transform(test)
 train_data = train.values
 test_data = test.values
 
-timesteps = 10
-
+timesteps = 5
 
 train_data_timesteps=np.array([[j for j in train_data[i:i+timesteps]] for i in range(0,len(train_data)-timesteps+1)])[:,:,0]
 
@@ -49,7 +44,6 @@ y_train_pred = model.predict(x_train).reshape(-1,1)
 y_test_pred = model.predict(x_test).reshape(-1,1)
 
 multi_step = [x[0] for x in test_data[:timesteps-1]]
-print(multi_step)
 for i in range(0, len(y_test_pred)):
     pred_i = model.predict([multi_step[-(timesteps-1):]])
     multi_step.append(pred_i[0])
@@ -69,27 +63,18 @@ test_timestamps = list(test.index)[timesteps-1:]
 
 plt.figure(figsize=(10, 4))
 plt.plot(test_timestamps, y_test, color='red', linewidth=2.0, alpha = 0.6)
-# plt.plot(test_timestamps, y_test_pred, color='blue', linewidth=2.0)
 plt.plot(test_timestamps, multi_step, color='green', linewidth=2.0)
 plt.legend(['Actual Value', 'Multi-Step Predictions'], loc="upper right")
-# plt.legend(['Actual Value', 'Single-Step Predictions', 'Multi-Step Predictions'])
-plt.title("Actual Values vs Multi-Step Predictions")
-plt.xlabel('Timesteps (milliseconds)')
-plt.ylabel('Acceleration: X-axis (g)')
-print(mean_squared_error(y_test, multi_step, squared=False))
-print(mean_absolute_percentage_error(y_test, multi_step)*100)
+plt.xlabel('Timesteps')
+plt.ylabel('Acceleration (g)')
+print("RMSE:", mean_squared_error(y_test, multi_step, squared=False))
+print("MAPE:", mean_absolute_percentage_error(y_test, multi_step)*100)
 
-
-plt.savefig("Vibration-x_huge_prediction.eps", format="eps", dpi=1200)
-plt.savefig("Vibration-x_huge_prediction.jpg", format="jpg", dpi=1200)
+plt.savefig("plots/Vibration-x_huge_prediction.jpg", format="jpg", dpi=1200)
 
 plt.show()
 
-print(len(multi_step))
-print(len(y_test))
-print(len(test_timestamps))
-
-with open("acc.out","w") as f:
+with open("acc.out", "w") as f:
     f.write('timestamp,test,pred\n')
-    for i in range(0,len(test_timestamps)):
+    for i in range(0, len(test_timestamps)):
         f.write(f"{test_timestamps[i]},{y_test[i][0]},{multi_step[i]}\n")
