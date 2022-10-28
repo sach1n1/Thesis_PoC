@@ -27,8 +27,8 @@ def get__mean_and_std(actual_data, predicted_data):
 mean = 0
 std = 0
 
-y_actual = load_data('/home/sachin/Thesis/SVR_acc_anom')[['test']]
-y_pred = load_data('/home/sachin/Thesis/SVR_acc_anom')[['pred']]
+y_actual = load_data('/AnomalyDectectionPlots')[['test']]
+y_pred = load_data('/AnomalyDectectionPlots')[['pred']]
 
 check_start_dt_pe = 0
 check_start_dt = 500

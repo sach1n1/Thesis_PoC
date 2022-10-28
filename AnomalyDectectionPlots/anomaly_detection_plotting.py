@@ -8,8 +8,8 @@ def load_data(data_dir):
     energy = pd.read_csv(os.path.join(data_dir, 'acc.out'))
     return energy
 
-y_actual = load_data('/home/sachin/Thesis/SVR_acc_anom')[['test']]
-y_pred = load_data('/home/sachin/Thesis/SVR_acc_anom')[['pred']]
+y_actual = load_data('/AnomalyDectectionPlots')[['test']]
+y_pred = load_data('/AnomalyDectectionPlots')[['pred']]
 
 
 
