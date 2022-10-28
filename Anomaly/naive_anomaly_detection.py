@@ -12,16 +12,16 @@ def get_mean_and_std(predicted_data):
 
 
 def load_data(data_dir):
-    energy = pd.read_csv(os.path.join(data_dir, 'OutActualSSForecast.csv')
+    values = pd.read_csv(os.path.join(data_dir, 'OutActualSSForecast.csv')
                          , parse_dates=['timestamp'])
-    energy = energy.drop_duplicates(subset="timestamp", keep='first')
-    energy.index = energy['timestamp']
-    energy = energy.reindex(pd.date_range(min(energy['timestamp']),
-                                          max(energy['timestamp']),
+    values = values.drop_duplicates(subset="timestamp", keep='first')
+    values.index = values['timestamp']
+    values = values.reindex(pd.date_range(min(values['timestamp']),
+                                          max(values['timestamp']),
                                           freq='S'))
-    energy = energy.drop('timestamp', axis=1)
-    energy = energy.interpolate()
-    return energy
+    values = values.drop('timestamp', axis=1)
+    values = values.interpolate()
+    return values
 
 
 mean = 0
@@ -59,8 +59,6 @@ h_value_result_FPR = {}
 for _ in h_values:
     h_value_result_FNR[_] = []
     h_value_result_FPR[_] = []
-
-
 
 for mod_value in modification_values:
     for h in h_values:

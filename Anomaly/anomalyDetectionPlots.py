@@ -1,6 +1,21 @@
-from common.utils import load_data
+import os
+import pandas as pd
 from ModifyList import ModifyList
 from matplotlib import pyplot as plt
+
+
+def load_data(data_dir):
+    values = pd.read_csv(os.path.join(data_dir, 'Value1.csv')
+                         , parse_dates=['timestamp'])
+    values = values.drop_duplicates(subset="timestamp", keep='first')
+    values.index = values['timestamp']
+    values = values.reindex(pd.date_range(min(values['timestamp']),
+                                          max(values['timestamp']),
+                                          freq='S'))
+    values = values.drop('timestamp', axis=1)
+    values = values.interpolate()
+    return values
+
 
 y_actual = load_data('/home/sachin/Thesis/Anomaly')[['y_actual']]
 y_pred = load_data('/home/sachin/Thesis/Anomaly')[['y_pred']]
