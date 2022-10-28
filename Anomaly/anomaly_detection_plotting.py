@@ -25,6 +25,5 @@ for mod_value in modification_values:
         plt.xlabel("Time")
         plt.ylabel("Vibration Values")
         plt.legend(['Actual Values', 'Actual Values modified with Anomalies'], loc="upper right")
-        plt.savefig(f"plots/Actual Values vs Modified with {percent} Anomalies.eps", format="eps", dpi=1200)
         plt.savefig(f"plots/Actual Values vs Modified with {percent} Anomalies.jpg", format="jpg", dpi=1200)
         plt.show()
