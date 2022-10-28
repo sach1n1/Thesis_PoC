@@ -3,7 +3,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from datetime import datetime
 import statsmodels.graphics.tsaplots as smt
-from statsmodels.tsa.seasonal import seasonal_decompose
 
 
 def tsplot(y, lags=None):
@@ -30,12 +29,8 @@ df = df.interpolate().fillna(method='bfill')
 con.close()
 print(df)
 
-# tsplot(df['value'])
 plt.acorr(df['value'], normed=True, maxlags=100, lw=2)
 plt.xlim([0, 100])
 plt.xlabel("Lags")
 plt.ylabel("Autocorrelation")
-#plt.title("Autocorrelation Plot")
-# plt.savefig('plots/acf_pacf.eps', format='eps', dpi=1200)
-# plt.savefig('plots/acf_pacf.jpg', format='jpg', dpi=1200)
-plt.show()
+plt.savefig('plots/acf_pacf.jpg', format='jpg', dpi=1200)

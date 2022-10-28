@@ -4,8 +4,6 @@ from copy import deepcopy
 import numpy as np
 import matplotlib.pyplot as plt
 
-import os
-
 
 Path = "/home/sachin/Thesis/Eval/"
 file_list = ['hour1CV.txt', 'hour6CV.txt', 'hour12CV.txt', 'hour24CV.txt']

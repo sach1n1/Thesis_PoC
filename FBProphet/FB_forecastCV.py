@@ -1,11 +1,7 @@
-from copy import deepcopy
-
 import pandas as pd
 import warnings
 from prophet import Prophet
 from sklearn.metrics import mean_squared_error, mean_absolute_percentage_error
-from common.utils import load_data, mape, create_features, rmse
-from time import time
 from datetime import datetime
 import sqlite3 as db
 import matplotlib.pyplot as plt
