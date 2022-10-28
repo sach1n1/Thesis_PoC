@@ -1,4 +1,3 @@
-from common.utils import load_data
 from Anomaly.ModifyList import ModifyList
 from matplotlib import pyplot as plt
 import pandas as pd

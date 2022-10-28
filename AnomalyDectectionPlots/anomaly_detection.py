@@ -1,5 +1,3 @@
-
-from common.utils import load_data
 import numpy as np
 from Anomaly.ModifyList import ModifyList
 from Anomaly.Detection import Detection
@@ -18,7 +16,7 @@ def get_pe_mean_and_std(actual_data, predicted_data):
     pe_std = round(np.array(percentage_errors).std(), 5)
     return pe_mean, pe_std
 
-def get__mean_and_std(actual_data, predicted_data):
+def get__mean_and_std(predicted_data):
     pe_mean = round(np.array(predicted_data).mean(), 5)
     pe_std = round(np.array(predicted_data).std(), 5)
     return pe_mean, pe_std
