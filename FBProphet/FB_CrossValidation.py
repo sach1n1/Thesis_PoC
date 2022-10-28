@@ -1,17 +1,11 @@
 import itertools
-import sys
 from datetime import datetime
 import pandas as pd
-import warnings
 import sqlite3 as db
-import warnings
 import numpy as np
-from pandas import to_datetime, DataFrame
 from prophet import Prophet
 from prophet.diagnostics import cross_validation, performance_metrics
-from sklearn.preprocessing import MinMaxScaler
-import datetime as dt
-from time import time
+
 
 forecast_start_dt = '2021-06-21 11:00:00'
 

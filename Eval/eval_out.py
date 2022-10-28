@@ -8,7 +8,7 @@ import os
 
 
 Path = "/home/sachin/Thesis/Eval/"
-file_list = ['hour1CVp.txt', 'hour6CVp.txt', 'hour12CVp.txt', 'hour24CVp.txt']
+file_list = ['hour1CV.txt', 'hour6CV.txt', 'hour12CV.txt', 'hour24CV.txt']
 
 values = {}
 

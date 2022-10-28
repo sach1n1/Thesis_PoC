@@ -3,6 +3,7 @@ from copy import deepcopy
 import pandas as pd
 import warnings
 from prophet import Prophet
+from sklearn.metrics import mean_squared_error, mean_absolute_percentage_error
 from common.utils import load_data, mape, create_features, rmse
 from time import time
 from datetime import datetime
@@ -10,16 +11,6 @@ import sqlite3 as db
 import matplotlib.pyplot as plt
 
 warnings.simplefilter('ignore')
-
-# pd.set_option('display.max_rows', None)
-# pd.set_option('display.max_columns', None)
-# pd.set_option('display.width', None)
-# pd.set_option('display.max_colwidth', -1)
-
-database_path = "/home/sachin/Downloads/RWO_0004_Ventilatoren_00.sqlite"
-
-
-
 
 database = "/home/sachin/Downloads/RWO_0004_Ventilatoren_00.sqlite"
 forecast_hour = '2021-05-27 12:00:00'
@@ -54,10 +45,6 @@ train = train.reset_index().rename(columns={'index': 'ds', 'value': 'y'})
 test = test.reset_index().rename(columns={'index': 'ds', 'value': 'y'})
 print(test)
 
-# m = Prophet(growth="linear",
-#             changepoint_prior_scale=1.0,
-#             seasonality_prior_scale=0.001,
-#             n_changepoints=50)
 
 m = Prophet(growth="linear",
             changepoint_prior_scale=0.001,
@@ -69,8 +56,8 @@ m.fit(train)
 future = m.make_future_dataframe(periods=len(test), freq='S', include_history=False)
 
 forecast = m.predict(future)
-print('MAPE for training data: ' + str(round(mape(forecast['yhat'], test['y'])*100, 2)) + '%' + "\n")
-print('RMSE for training data: ' + str(round(rmse(forecast['yhat'], test['y']), 2)) + "\n")
+print('MAPE for training data: ' + str(round(mean_absolute_percentage_error(forecast['yhat'], test['y'])*100, 2)) + '%' + "\n")
+print('RMSE for training data: ' + str(round(mean_squared_error(forecast['yhat'], test['y']), 2)) + "\n")
 
 
 pred = pd.DataFrame(index=test.index)
@@ -81,7 +68,4 @@ print(pred)
 pred.plot()
 plt.xlabel("Time (seconds)")
 plt.ylabel("Vibration Value")
-plt.savefig(f'plots/Forecast with {training_duration} hours of training data.eps', format='eps', dpi=1200)
-plt.savefig(f'plots/Forecast with {training_duration} hours of training data.jpg', format='jpg', dpi=1200)
-
-plt.show()
+plt.savefig(f'plots/Forecast with {training_duration} hours of training data_cv.jpg', format='jpg', dpi=1200)

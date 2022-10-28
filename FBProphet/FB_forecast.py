@@ -1,28 +1,28 @@
-from copy import deepcopy
-
 import pandas as pd
 import warnings
 from prophet import Prophet
-from common.utils import load_data, mape, create_features, rmse
-from time import time
+from sklearn.metrics import mean_squared_error, mean_absolute_percentage_error
 from datetime import datetime
 import sqlite3 as db
 import matplotlib.pyplot as plt
 
 warnings.simplefilter('ignore')
 
-# pd.set_option('display.max_rows', None)
-# pd.set_option('display.max_columns', None)
-# pd.set_option('display.width', None)
-# pd.set_option('display.max_colwidth', -1)
-
-database_path = "/home/sachin/Downloads/RWO_0004_Ventilatoren_00.sqlite"
 database = "/home/sachin/Downloads/RWO_0004_Ventilatoren_00.sqlite"
 forecast_hour = '2021-05-27 12:00:00'
-training_duration = 1
+
+ti = {
+24:1622023200000,
+12:1622066400000,
+6:1622088000000,
+1:1622106000000
+}
+
+training_duration = 24
+
 con = db.connect(database)
 df = pd.read_sql_query(f"SELECT time, value FROM Value WHERE sensor_id=1 AND "
-                       f"time >= '{1622106000000}' AND time <= '{1622113200000}'",
+                       f"time >= '{ti[24]}' AND time <= '{1622113200000}'",
                        con)
 df["time"] = df["time"].apply(lambda utc: datetime.fromtimestamp(int(utc / 1000)))
 df.drop_duplicates(subset="time", keep="first", inplace=True)
@@ -50,8 +50,8 @@ m.fit(train)
 future = m.make_future_dataframe(periods=len(test), freq='S', include_history=False)
 
 forecast = m.predict(future)
-print('MAPE for training data: ' + str(round(mape(forecast['yhat'], test['y'])*100, 2)) + '%' + "\n")
-print('RMSE for training data: ' + str(round(rmse(forecast['yhat'], test['y']), 2)) + "\n")
+print('MAPE for training data: ' + str(round(mean_absolute_percentage_error(forecast['yhat'], test['y'])*100, 2)) + '%' + "\n")
+print('RMSE for training data: ' + str(round(mean_squared_error(forecast['yhat'], test['y']), 2)) + "\n")
 
 
 
@@ -63,27 +63,4 @@ pred.plot()
 plt.xlabel("Time (seconds)")
 plt.ylabel("Vibration Value")
 plt.show()
-plt.savefig(f'plots/Forecast with {training_duration} hours of training data_bcv.eps', format='eps', dpi=1200)
-plt.savefig(f'plots/Forecast with {training_duration} hours of training data_bcv.jpg', format='jpg', dpi=1200)
-
-# iteration_dict["Train Start "] = str(train_start_dt)
-# iteration_dict["Test Start "] = str(test_start_dt)
-# iteration_dict["Test End"] = str(test_end_dt)
-# iteration_dict["MAPE"] = round(mape(forecast['yhat'], test['y']) * 100, 2)
-# iteration_dict["RMSE"] = round(rmse(forecast['yhat'], test['y']) * 100, 2)
-# iteration_dict["Time Taken"] = round((time() - start) / 60, 2)
-
-
-
-# result_dict[str(i)] = deepcopy(iteration_dict)
-#
-#
-# train_start_dt = str(pd.Timestamp(train_start_dt) + pd.DateOffset(hours=1))
-# test_start_dt = str(pd.Timestamp(test_start_dt) + pd.DateOffset(hours=1))
-# test_end_dt = str(pd.Timestamp(test_start_dt) + pd.DateOffset(hours=1))
-
-#    i = i + 1
-
-# f = open("FBProphet/hour1.txt", 'wt')
-# data = str(result_dict)
-# f.write(data)
+plt.savefig(f'plots/Forecast with {training_duration} hours of training data.jpg', format='jpg', dpi=1200)
