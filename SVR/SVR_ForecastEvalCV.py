@@ -1,23 +1,24 @@
-import os
-import warnings
-import matplotlib.pyplot as plt
 import numpy as np
 from time import time
 import pandas as pd
-import datetime as dt
-import math
-
-from datetime import datetime
-
 from sklearn.svm import SVR
 from sklearn.preprocessing import MinMaxScaler
 from copy import deepcopy
-from sklearn.model_selection import KFold
-from common.utils import load_data, mape, rmse
+from sklearn.metrics import mean_squared_error, mean_absolute_percentage_error
 
 
+def load_data(data_dir):
+    values = pd.read_csv(os.path.join(data_dir, 'Value1.csv')
+                         , parse_dates=['timestamp'])
+    values = values.drop_duplicates(subset="timestamp", keep='first')
+    values.index = values['timestamp']
+    values = values.reindex(pd.date_range(min(values['timestamp']),
+                                          max(values['timestamp']),
+                                          freq='S'))
+    values = values.drop('timestamp', axis=1)
+    values = values.interpolate()
+    return values
 
-start = time()
 
 vibration = load_data('/home/sachin/Thesis/data')[['vibration']]
 
@@ -55,8 +56,6 @@ for iterations in range(1, 31):
     x_train, y_train = train_data_timesteps[:, :timesteps - 1], train_data_timesteps[:, [timesteps - 1]]
     x_test, y_test = test_data_timesteps[:, :timesteps - 1], test_data_timesteps[:, [timesteps - 1]]
 
-    # model = SVR(kernel='rbf', gamma=0.5, C=10, epsilon=0.05)
-    # model = SVR(kernel='rbf', gamma=1, C=10, epsilon=0.01) #CV take slongerthesis
     model = SVR(kernel='rbf', gamma=0.01, C=10, epsilon=0.001)
 
     model.fit(x_train, y_train[:, 0])
@@ -78,8 +77,8 @@ for iterations in range(1, 31):
     iteration_dict["Train Start "] = str(train_start_dt)
     iteration_dict["Test Start "] = str(test_start_dt)
     iteration_dict["Test End"] = str(test_end_dt)
-    iteration_dict["MAPE"] = round(mape(y_test_pred, y_test) * 100, 2)
-    iteration_dict["RMSE"] = round(rmse(y_test_pred, y_test), 2)
+    iteration_dict["MAPE"] = round(mean_absolute_percentage_error(y_test_pred, y_test) * 100, 2)
+    iteration_dict["RMSE"] = round(mean_squared_error(y_test_pred, y_test, squared=False), 2)
     iteration_dict["Time Taken"] = round((time() - start) / 60, 2)
 
     result_dict[str(iterations)] = deepcopy(iteration_dict)
@@ -88,27 +87,8 @@ for iterations in range(1, 31):
     test_start_dt = str(pd.Timestamp(test_start_dt) + pd.DateOffset(hours=1))
     test_end_dt = str(pd.Timestamp(test_start_dt) + pd.DateOffset(hours=1))
 
-
-
-f = open("Outs/hour24CVp.txt", 'w')
+f = open("Outs/hour24CV.txt", 'w')
 data = str(result_dict)
 print(data)
 f.write(data)
 f.close()
-
-# plt.figure(figsize=(25,6))
-# plt.plot(train_timestamps, y_train, color = 'red', linewidth=2.0, alpha = 0.6)
-# plt.plot(train_timestamps, y_train_pred, color = 'blue', linewidth=0.8)
-# plt.legend(['Actual','Predicted'])
-# plt.xlabel('Timestamp')
-# plt.title("Training data prediction")
-# plt.show()
-
-# print('MAPE for training data: ', mape(y_train_pred, y_train)*100, '%')
-
-# plt.figure(figsize=(10,3))
-# plt.plot(test_timestamps, y_test, color = 'red', linewidth=2.0, alpha = 0.6)
-# plt.plot(test_timestamps, y_test_pred, color = 'blue', linewidth=0.8)
-# plt.legend(['Actual','Predicted'])
-# plt.xlabel('Timestamp')
-# plt.show()

@@ -1,29 +1,36 @@
-
 import numpy as np
-from time import time
-
-
+import os
 from sklearn.svm import SVR
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import GridSearchCV
-from common.utils import load_data, mape
-
-start = time()
-
-energy = load_data('../data')[['vibration']]
+import pandas as pd
 
 
-train_start_dt = '2021-06-21 05:00:00'
-test_start_dt = '2021-06-21 11:00:00'
+def load_data(data_dir):
+    values = pd.read_csv(os.path.join(data_dir, 'Value1.csv')
+                         , parse_dates=['timestamp'])
+    values = values.drop_duplicates(subset="timestamp", keep='first')
+    values.index = values['timestamp']
+    values = values.reindex(pd.date_range(min(values['timestamp']),
+                                          max(values['timestamp']),
+                                          freq='S'))
+    values = values.drop('timestamp', axis=1)
+    values = values.interpolate()
+    return values
+
+
+vibration = load_data('../data')[['vibration']]
+
+train_start_dt = '2021-06-21 07:00:00'
+test_start_dt = '2021-06-21 12:00:00'
 test_end_dt = '2021-06-21 17:00:00'
 
-train = energy.copy()[(energy.index >= train_start_dt) & (energy.index < test_start_dt)][['vibration']]
-test = energy.copy()[(energy.index >= test_start_dt) & (energy.index < test_end_dt)][['vibration']]
+train = vibration.copy()[(vibration.index >= train_start_dt) & (vibration.index < test_start_dt)][['vibration']]
+test = vibration.copy()[(vibration.index >= test_start_dt) & (vibration.index < test_end_dt)][['vibration']]
 
 scaler = MinMaxScaler()
 
 train['vibration'] = scaler.fit_transform(train)
-
 test['vibration'] = scaler.transform(test)
 
 train_data = train.values

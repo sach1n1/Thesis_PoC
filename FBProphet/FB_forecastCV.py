@@ -53,7 +53,7 @@ future = m.make_future_dataframe(periods=len(test), freq='S', include_history=Fa
 
 forecast = m.predict(future)
 print('MAPE for training data: ' + str(round(mean_absolute_percentage_error(forecast['yhat'], test['y'])*100, 2)) + '%' + "\n")
-print('RMSE for training data: ' + str(round(mean_squared_error(forecast['yhat'], test['y']), 2)) + "\n")
+print('RMSE for training data: ' + str(round(mean_squared_error(forecast['yhat'], test['y'], squared=False), 2)) + "\n")
 
 
 pred = pd.DataFrame(index=test.index)
